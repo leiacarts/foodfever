@@ -34,3 +34,4 @@ To apply accessibility to a responsive web application, and to create a service 
 * [Doug Brown's walkthrough](https://www.youtube.com/watch?v=92dtrNU1GQc)
 * [Matthew Cranford's walkthrough](https://matthewcranford.com/category/blog-posts/walkthrough/restaurant-reviews-app/)
 * [bitsofcode on YouTube](https://www.youtube.com/watch?v=BfL3pprhnms)
+* [Sugahzor's github repo](https://github.com/Sugahzor)
