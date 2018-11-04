@@ -37,7 +37,6 @@ self.addEventListener('activate', event => {
         return caches.delete(cache);
       };
     }))));
-  );
 });
 
 self.addEventListener('fetch', event => {
