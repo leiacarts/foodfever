@@ -5,6 +5,7 @@
 * [Overview](#overview)
 * [Learning Objectives](#learning-objectives)
 * [Features](#features)
+* [Installation](#installation)
 * [Built With](#built-with)
 * [Acknowledgements](#acknowledgements)
 
@@ -22,6 +23,10 @@ To apply accessibility to a responsive web application, and to create a service 
 * Accessible images
 * Caches
 * Object Notation
+
+## Installation
+
+Download repo. Open index.html with localhost.
 
 ## Built with
 
