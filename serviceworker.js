@@ -35,8 +35,9 @@ self.addEventListener('activate', event => {
       if (cache !== staticCache) {
         console.log('[serviceWorker] removing cahced files from ', cache);
         return caches.delete(cache);
-      };
-    }))));
+      }
+    })))
+  )
 });
 
 self.addEventListener('fetch', event => {
@@ -46,6 +47,6 @@ self.addEventListener('fetch', event => {
         return response;
       }
       return fetch(event.request);
-    });
+    })
   );
 });
