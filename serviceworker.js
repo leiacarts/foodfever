@@ -1,5 +1,5 @@
-const staticCache = 'staticv1';
-const cacheList = [
+let staticCache = 'staticv1';
+let cacheList = [
   '/',
   '/index.html',
   '/retaurant.html',
@@ -24,29 +24,36 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches
     .open(staticCache)
-    .then(cache => cache.addAll(cacheList))
+    .then(cache => {
+      return cache.addAll(cacheList);
+    })
     .then(self.skipWaiting())
   );
 });
 
 self.addEventListener('activate', event => {
   event.waitUntil(
-    caches.keys().then(cacheNames => Promise.all(cacheNames.map(cache => {
-      if (cache !== staticCache) {
-        console.log('[serviceWorker] removing cahced files from ', cache);
-        return caches.delete(cache);
-      }
-    })))
-  )
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames.map(cacheName => {
+          if (staticCache.indexOf(cacheName) === -1) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
+  );
 });
 
 self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request).then(response => {
-      if (response) {
-        return response;
+    event.respondWith(
+      caches.match(event.request)
+        .then(response => {
+          if (response) {
+            return response;
+        }
+        return fetch(event.request);
       }
-      return fetch(event.request);
-    })
+    )
   );
 });
