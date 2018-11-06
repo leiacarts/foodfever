@@ -23,7 +23,7 @@ const cacheList = [
 self.addEventListener('install', event => {
   event.waitUntil(
     caches
-    .open(staticv1)
+    .open(staticCache)
     .then(cache => cache.addAll(cacheList))
     .then(self.skipWaiting())
   );
