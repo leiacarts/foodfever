@@ -7,8 +7,8 @@ var markers = []
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
   .register('/serviceworker.js')
-  .catch(function(err) {
-    console.error(err);
+  .catch(function(error) {
+    console.error(error);
   });
 }
 
