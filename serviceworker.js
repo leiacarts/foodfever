@@ -51,9 +51,18 @@ self.addEventListener('fetch', event => {
         .then(response => {
           if (response) {
             return response;
-        }
-        return fetch(event.request);
-      }
-    )
-  );
+        } else {
+          return fetch(event.request)
+          .then(response => {
+            const responseClone = response.clone();
+            return caches.open(staticCache)
+            .then(cache => {
+              cache.put(event.request, responseClone);
+              return response;
+            })
+          })
+          .catch(error => {
+            console.error(error)
+          });
+        }}));
 });
