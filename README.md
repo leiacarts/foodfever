@@ -40,3 +40,6 @@ Download repo. Open index.html with localhost.
 * [Matthew Cranford's walkthrough](https://matthewcranford.com/category/blog-posts/walkthrough/restaurant-reviews-app/)
 * [bitsofcode on YouTube](https://www.youtube.com/watch?v=BfL3pprhnms)
 * [Sugahzor's github repo](https://github.com/Sugahzor)
+* [Sitepoint](https://www.sitepoint.com/getting-started-with-service-workers/)
+* [Google Developers](https://developers.google.com/web/fundamentals/primers/service-workers/)
+* [StackOverflow](https://stackoverflow.com/questions/47160929/progressive-web-app-uncaught-in-promise-typeerror-failed-to-fetch?rq=1)
