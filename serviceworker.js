@@ -27,21 +27,6 @@ self.addEventListener('install', event => {
     .then(cache => {
       return cache.addAll(cacheList);
     })
-    .then(self.skipWaiting())
-  );
-});
-
-self.addEventListener('activate', event => {
-  event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.map(cacheName => {
-          if (staticCache.indexOf(cacheName) === -1) {
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    })
   );
 });
 
@@ -55,14 +40,13 @@ self.addEventListener('fetch', event => {
           return fetch(event.request)
           .then(response => {
             const responseClone = response.clone();
-            return caches.open(staticCache)
+            caches.open(staticCache)
             .then(cache => {
               cache.put(event.request, responseClone);
-              return response;
             })
-          })
-          .catch(error => {
-            console.error(error)
-          });
-        }}));
+          return response;
+        })
+      }
+    })
+  );
 });
