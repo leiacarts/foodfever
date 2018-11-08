@@ -2,7 +2,7 @@ let staticCache = 'staticv1';
 let cacheList = [
   '/',
   '/index.html',
-  '/retaurant.html',
+  '/restaurant.html',
   '/css/styles.css',
   '/data/restaurants.json',
   '/img/1.jpg',
@@ -26,6 +26,20 @@ self.addEventListener('install', event => {
     .open(staticCache)
     .then(cache => {
       return cache.addAll(cacheList);
+    })
+  );
+});
+
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames.map(cacheName => {
+          if (staticCache.indexOf(cacheName) === -1) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
     })
   );
 });
