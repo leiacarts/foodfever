@@ -23,6 +23,7 @@ To apply accessibility to a responsive web application, and to create a service 
 * Accessible images
 * Caches
 * Object Notation
+* ES6
 
 ## Installation
 
