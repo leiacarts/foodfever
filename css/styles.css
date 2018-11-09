@@ -1,6 +1,10 @@
 @charset "utf-8";
 /* CSS Document */
 
+body {
+	overflow-x: hidden !important;
+}
+
 body,td,th,p{
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 10pt;
@@ -30,7 +34,7 @@ a img{
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: Arial, Helvetica, sans-serif;
-  margin: 0 0 20px;
+  margin: 5px 0;
 }
 article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -145,6 +149,7 @@ nav h1 a {
   background-color: #f3f3f3;
   list-style: outside none none;
 	margin: 15px 0 0 0;
+	padding: 0;
   text-align: center;
 	display: flex;
 	flex-wrap: wrap;
@@ -156,11 +161,11 @@ nav h1 a {
   border: 2px solid #ccc;
   font-family: Arial,sans-serif;
   margin: 15px;
-  min-height: 380px;
-  padding: 25px 30px 25px;
+  min-height: 320px;
+  padding: 15px;
   text-align: left;
   width: 255px;
-	max-width: 470px;
+	max-width: 450px;
 }
 #restaurants-list .restaurant-img {
   background-color: #ccc;
@@ -168,7 +173,7 @@ nav h1 a {
 	align-content: center;
   margin: 0;
   max-width: 100%;
-	min-height: 250px;
+	min-height: 200px;
 	min-width: 100%;
 }
 #restaurants-list li h1 {
@@ -183,7 +188,6 @@ nav h1 a {
 }
 #restaurants-list p {
   margin: 0;
-  font-size: 11pt;
 }
 #restaurants-list li a {
   background-color: orange;
@@ -260,13 +264,13 @@ nav h1 a {
   width: 50%;
 }
 #restaurant-container {
-	width: calc((100% - 80px) / 2);
-	height: 55%;
-	order: 0;
+	width: 50%;
+	height: 50%;
+	margin: auto;
 }
 #reviews-container {
-	order: 2;
-  padding: 10% 20% 80px 20%;
+	margin: auto;
+  padding: 0 0 80px 0;
 	display: flex;
 	flex-direction: column;
 }
@@ -313,8 +317,9 @@ nav h1 a {
 
 
 @media screen and (max-width: 576px) {
-	#map, #restaurants-list {
-		/* width: 100%; */
+	mav, #footer {
+		margin: 0;
+		padding: 0;
 	}
 
 	.filter-options h2 {
@@ -350,7 +355,6 @@ nav h1 a {
 	}
 
 	#restaurant-name {
-		align-self: flex-start;
 		margin: 30px 0 15px;
 		transform: translateX(8%);
 	}
@@ -366,8 +370,9 @@ nav h1 a {
 }
 
 @media screen and (min-width: 577px) and (max-width: 767px) {
-	#map {
-		/* width: 100%; */
+	nav, #footer {
+		margin: 0;
+		padding: 0;
 	}
 
 	.filter-options h2 {
@@ -388,7 +393,7 @@ nav h1 a {
 		width: calc(50% - 24px);
 	}
 
-	.restaurant-man {
+	.restaurant-main {
 		position: relative;
 	}
 
@@ -420,8 +425,8 @@ nav h1 a {
 
 	#restaurant-hours {
 		width: 80%;
-		margin: 0 auto;
-		text-align: end;
+		margin: 0;
+		text-align: center;
 	}
 
 	#restaurant-hours tr:nth-child(odd) {
@@ -434,13 +439,11 @@ nav h1 a {
 }
 
 
-@media screen and (min-width: 768px) and (max-width: 991px) {
-	#map {
-		/* width: 100%; */
-	}
 
-	#restaurants-list {
-		/* width: 90%; */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+	nav, #footer {
+		padding: 0;
+		margin: 0;
 	}
 
 	.filter-options select {
@@ -456,10 +459,6 @@ nav h1 a {
 		padding: 0;
 		margin: 0 auto;
 		order: 1;
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		justify-content: space-around;
 		border-top: 1px solid #d9d9d9;
 	}
 
@@ -479,8 +478,7 @@ nav h1 a {
 	}
 
 	#restaurant-cuisine {
-		order: 4;
-		align-self: flex-start;
+		order: 2;
 	}
 
 	#restaurant-container::after {
@@ -495,9 +493,7 @@ nav h1 a {
 	}
 
 	#restaurant-hours {
-		margin-top: 30px;
 		order: 3;
-		align-self: flex-start;
 	}
 
 	#restaurant-hours tr {
@@ -537,46 +533,4 @@ nav h1 a {
 		margin-left: 10px;
 	}
 }
-
-
-@media screen and (max-width: 767px) {
-	#reviews-list li {
-		width: 100%;
-		padding: 0;
-		display: block;
-	}
-
-	#reviews-list li p:first-of-type, #reviews-list li p:first-of-type + p {
-		padding: 0;
-		margin: 0;
-		height: 50px;
-		display: inline-block;
-	}
-
-	#reviews-list li p:first-of-type {
-		font-size: 1.5em;
-		line-height: 2.08em;
-		width: calc(50% - 30px);
-		padding-left: 30px;
-	}
-
-	#reviews-list li p:first-of-type + p {
-		line-height: 3.5em;
-		width: calc(50% - 40px);
-		text-align: right;
-		padding-right: 30px;
-	}
-
-	#reviews-list li p:nth-of-type(3n) {
-		margin-left: 30px;
-	}
-
-	#reviews-list li p:last-of-type {
-		font-size: 1em;
-		line-height: 1.875em;
-		padding: 0 30px;
-		width: calc(100% - 60px);
-		float: none;
-		letter-spacing: -1px;
-	}
 }
