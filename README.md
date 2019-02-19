@@ -1,4 +1,4 @@
-# Restaurant Review App State One
+# FOOD FEVER
 
 ## Table of Contents
 
@@ -8,10 +8,11 @@
 * [Installation](#installation)
 * [Built With](#built-with)
 * [Acknowledgements](#acknowledgements)
+* [Screenshots](#screenshots)
 
 ## Overview
 
-For the **Restaurant Reviews** projects, a static webpage was incrementally converted to a mobile-ready web application. In **Stage One**, a static design that lacks accessibility was converted to be responsive on different sized displays and accessible for screen reader use. A service worker was added to begin the process of creating a seamless offline experience for users.
+FOOD FEVER is a restaurant review app that helps narrow down what’s good in the neighborhood. Featuring filters for locations and cuisines, this responsive app utilizes ES6 JavaScript and caches to function both online and offline.
 
 ### Learning Obectives
 
@@ -27,7 +28,7 @@ To apply accessibility to a responsive web application, and to create a service 
 
 ## Installation
 
-Download repo. Open index.html with localhost.
+Download repo. Using the command `python -m SimpleHTTPServer 8000` in terminal, run the localhost while inside the project folder. 
 
 ## Built with
 
@@ -44,3 +45,9 @@ Download repo. Open index.html with localhost.
 * [Sitepoint](https://www.sitepoint.com/getting-started-with-service-workers/)
 * [Google Developers](https://developers.google.com/web/fundamentals/primers/service-workers/)
 * [StackOverflow](https://stackoverflow.com/questions/47160929/progressive-web-app-uncaught-in-promise-typeerror-failed-to-fetch?rq=1)
+
+## Screenshots
+
+![screenshot](https://github.com/leiacarts/foodfever/blob/master/foodfever1.png)
+![screenshot](https://github.com/leiacarts/foodfever/blob/master/foodfever2.png)
+![screenshot](https://github.com/leiacarts/foodfever/blob/master/foodfever3.png)
